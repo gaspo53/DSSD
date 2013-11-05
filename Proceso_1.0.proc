@@ -4,7 +4,7 @@
     <elements xmi:type="process:Pool" xmi:id="_0Rw9AEG9EeOyLcWJA94kdg" name="Objetivos" label="Objetivos" welcomePageInternal="false" basedOnLookAndFeel="Default Application">
       <elements xmi:type="process:Lane" xmi:id="_O-zRQUHHEeODpYP6gi19aQ" name="Empleado" label="Empleado" user="" groups="_W8b6YEHAEeOyLcWJA94kdg">
         <elements xmi:type="process:StartEvent" xmi:id="_0U1fIEG9EeOyLcWJA94kdg" name="Inicio" label="Inicio" outgoing="_nrRgIEHJEeODpYP6gi19aQ"/>
-        <elements xmi:type="process:Task" xmi:id="_L0bgoEG_EeOyLcWJA94kdg" name="Cargar_target" label="Cargar target" outgoing="_4AyWAEHJEeODpYP6gi19aQ" incoming="_iIZYUEHHEeODpYP6gi19aQ" user="" groups="_W8b6YEHAEeOyLcWJA94kdg">
+        <elements xmi:type="process:Task" xmi:id="_L0bgoEG_EeOyLcWJA94kdg" name="Cargar_target" label="Cargar target" outgoing="_4AyWAEHJEeODpYP6gi19aQ" incoming="_iIZYUEHHEeODpYP6gi19aQ _Y092AEZlEeOAo93nOXRuOg" user="" groups="_W8b6YEHAEeOyLcWJA94kdg">
           <connectors xmi:type="process:Connector" xmi:id="_uSBZQEW8EeOlDqkyn6XmqA" name="cargar_target" label="cargar_target" connectorId="SetVariable" event="taskOnFinish" ignoreErrors="false">
             <parameters xmi:type="process:Parameter" xmi:id="_uSBZQUW8EeOlDqkyn6XmqA" key="setVariableName" value="ACED000574000D7461726765745F676C6F62616C"/>
             <parameters xmi:type="process:Parameter" xmi:id="_uSBZQkW8EeOlDqkyn6XmqA" key="setValue" value="ACED0005740009247B7461726765747D"/>
@@ -17,7 +17,7 @@
             <widgets xmi:type="form:TextAreaFormField" xmi:id="_EahjwEHTEeODpYP6gi19aQ" name="target" label="target" displayLabel="Carga de Target">
               <script xmi:type="form:GroovyScript" xmi:id="_6TcmEkHSEeODpYP6gi19aQ" inputScript="" setVarScript="target"/>
               <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_6TcmE0HSEeODpYP6gi19aQ"/>
-              <validators xmi:type="form:Validator" xmi:id="_LTZgEEHTEeODpYP6gi19aQ" validatorClass="org.bonitasoft.forms.server.validator.RegexFieldValidator" label="EHHHHHH GATO" name="targetValidator1" parameter="^.{20,1000}$"/>
+              <validators xmi:type="form:Validator" xmi:id="_LTZgEEHTEeODpYP6gi19aQ" validatorClass="org.bonitasoft.forms.server.validator.RegexFieldValidator" label="Cargá el targe gato" name="targetValidator1" parameter="^.{10,1000}$"/>
             </widgets>
           </form>
         </elements>
@@ -43,16 +43,17 @@
         </elements>
         <elements xmi:type="process:Task" xmi:id="_k1vdcEHJEeODpYP6gi19aQ" name="Seleccionar_periodo" label="Seleccionar período" outgoing="_pLRTQEHJEeODpYP6gi19aQ" incoming="_nrRgIEHJEeODpYP6gi19aQ" user="">
           <connectors xmi:type="process:Connector" xmi:id="_rtzJAEW8EeOlDqkyn6XmqA" name="periodo_seleccionado" label="periodo_seleccionado" connectorId="SetVariable" event="taskOnFinish" ignoreErrors="false">
-            <parameters xmi:type="process:Parameter" xmi:id="_73elgEXAEeOlDqkyn6XmqA" key="setVariableName" value="ACED0005740011247B706572696F646F5F676C6F62616C7D"/>
-            <parameters xmi:type="process:Parameter" xmi:id="_73elgUXAEeOlDqkyn6XmqA" key="setValue" value="ACED000574000B247B706572696F646F737D"/>
+            <parameters xmi:type="process:Parameter" xmi:id="_7UBgoEZkEeOAo93nOXRuOg" key="setVariableName" value="ACED000574000E706572696F646F5F676C6F62616C"/>
+            <parameters xmi:type="process:Parameter" xmi:id="_7UBgoUZkEeOAo93nOXRuOg" key="setValue" value="ACED000574000A247B706572696F646F7D"/>
           </connectors>
+          <data xmi:type="process:Data" xmi:id="_qKga8EZkEeOAo93nOXRuOg" name="periodo" label="periodo" dataType="_0O8ShkG9EeOyLcWJA94kdg"/>
           <data xmi:type="process:Data" xmi:id="_sdQocEHJEeODpYP6gi19aQ" name="periodos" label="periodos" dataType="_sVP78EHJEeODpYP6gi19aQ" defaultValue=""/>
           <form xmi:type="form:Form" xmi:id="_P-LqgEXAEeOlDqkyn6XmqA" name="Seleccionar_periodo" label="Seleccionar período" nLine="3" pageLabel="Seleccionar período">
             <widgets xmi:type="form:SubmitFormButton" xmi:id="_P-LqhEXAEeOlDqkyn6XmqA" name="Submit1" label="Submit1" displayLabel="Submit1">
               <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_P-LqhUXAEeOlDqkyn6XmqA" line="2"/>
             </widgets>
             <widgets xmi:type="form:SelectFormField" xmi:id="_XfPoMEXAEeOlDqkyn6XmqA" name="Select1" label="Select1" displayLabel="Período" enum="_sdQocEHJEeODpYP6gi19aQ">
-              <script xmi:type="form:GroovyScript" xmi:id="_Xf-oAEXAEeOlDqkyn6XmqA" inputScript="${periodos}"/>
+              <script xmi:type="form:GroovyScript" xmi:id="_Xf-oAEXAEeOlDqkyn6XmqA" inputScript="${periodos}" setVarScript="periodo"/>
               <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_XfRdYEXAEeOlDqkyn6XmqA"/>
             </widgets>
           </form>
@@ -76,13 +77,26 @@
         </elements>
       </elements>
       <elements xmi:type="process:Lane" xmi:id="_UFBkMEHHEeODpYP6gi19aQ" name="Supervisor" label="Supervisor" user="" groups="_IQzA0EHKEeODpYP6gi19aQ">
-        <elements xmi:type="process:Task" xmi:id="__5btQEHJEeODpYP6gi19aQ" name="Validar_target" label="Validar target" incoming="_Ct5Y8EHKEeODpYP6gi19aQ" stepSummary="" user=""/>
+        <elements xmi:type="process:Task" xmi:id="__5btQEHJEeODpYP6gi19aQ" name="Validar_target" label="Validar target" outgoing="_WiCKEEZlEeOAo93nOXRuOg" incoming="_Ct5Y8EHKEeODpYP6gi19aQ" stepSummary="" user="" groups="_IQzA0EHKEeODpYP6gi19aQ">
+          <form xmi:type="form:Form" xmi:id="_w-vAcEZnEeOAo93nOXRuOg" name="Validar_target" label="Validar target" nLine="3" pageLabel="Validar target">
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_w-vAcUZnEeOAo93nOXRuOg" name="finalizar" label="finalizar" displayLabel="Finalizar">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_w-vAckZnEeOAo93nOXRuOg" line="2"/>
+            </widgets>
+            <widgets xmi:type="form:CheckBoxSingleFormField" xmi:id="_xiRyYEZnEeOAo93nOXRuOg" name="aprobado" label="aprobado" displayLabel="Aprobado">
+              <script xmi:type="form:GroovyScript" xmi:id="_y1GsMEZnEeOAo93nOXRuOg" setVarScript="aprobado_global"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_xiVcwEZnEeOAo93nOXRuOg"/>
+            </widgets>
+          </form>
+        </elements>
+        <elements xmi:type="process:EndEvent" xmi:id="_cP_ycEZlEeOAo93nOXRuOg" name="Fin" label="Fin" incoming="_cQPDAEZlEeOAo93nOXRuOg"/>
+        <elements xmi:type="process:ANDGateway" xmi:id="_7VF60EZoEeOAo93nOXRuOg" name="Target_aprobados" label="Target aprobados" outgoing="_Y092AEZlEeOAo93nOXRuOg _cQPDAEZlEeOAo93nOXRuOg" incoming="_WiCKEEZlEeOAo93nOXRuOg" exclusiveOutgoingTransition="true"/>
       </elements>
       <resourceFolders xmi:type="process:ResourceFolder" xmi:id="_0VSLEEG9EeOyLcWJA94kdg" path="User/_0Rw9AEG9EeOyLcWJA94kdg/application/application"/>
       <errorTemplate xmi:type="process:AssociatedFile" xmi:id="_0VSyIEG9EeOyLcWJA94kdg" path="User/_0Rw9AEG9EeOyLcWJA94kdg/html/error.html"/>
       <processTemplate xmi:type="process:AssociatedFile" xmi:id="_0VSLEUG9EeOyLcWJA94kdg" path="User/_0Rw9AEG9EeOyLcWJA94kdg/html/process.html"/>
       <pageTemplate xmi:type="process:AssociatedFile" xmi:id="_0VSyIUG9EeOyLcWJA94kdg" path="User/_0Rw9AEG9EeOyLcWJA94kdg/html/page.html"/>
       <consultationTemplate xmi:type="process:AssociatedFile" xmi:id="_0VSLEkG9EeOyLcWJA94kdg" path="User/_0Rw9AEG9EeOyLcWJA94kdg/html/consultation.html"/>
+      <data xmi:type="process:JavaObjectData" xmi:id="_4gwncEZnEeOAo93nOXRuOg" name="aprobado_global" label="aprobado_global" dataType="_0O8SiEG9EeOyLcWJA94kdg" defaultValue="" className="java.lang.Object"/>
       <data xmi:type="process:JavaObjectData" xmi:id="_MreJcEHXEeODpYP6gi19aQ" name="lista_objetivos" label="lista_objetivos" dataType="_0O8SiEG9EeOyLcWJA94kdg" defaultValue="" className="java.util.ArrayList"/>
       <data xmi:type="process:JavaObjectData" xmi:id="_HoiAcEW7EeOlDqkyn6XmqA" name="objetivo_global" label="objetivo_global" dataType="_0O8SiEG9EeOyLcWJA94kdg" defaultValue="" className="java.lang.Object"/>
       <data xmi:type="process:JavaObjectData" xmi:id="_mAFYQEW8EeOlDqkyn6XmqA" name="periodo_global" label="periodo_global" dataType="_0O8SiEG9EeOyLcWJA94kdg" defaultValue="" className="java.lang.Object"/>
@@ -101,6 +115,15 @@
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_Ct5Y8EHKEeODpYP6gi19aQ" source="_wSemgEHJEeODpYP6gi19aQ" target="__5btQEHJEeODpYP6gi19aQ">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_Ct5Y8UHKEeODpYP6gi19aQ"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_WiCKEEZlEeOAo93nOXRuOg" source="__5btQEHJEeODpYP6gi19aQ" target="_7VF60EZoEeOAo93nOXRuOg" condition="">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_WiCxIEZlEeOAo93nOXRuOg"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_Y092AEZlEeOAo93nOXRuOg" name="no" label="no" source="_7VF60EZoEeOAo93nOXRuOg" target="_L0bgoEG_EeOyLcWJA94kdg" condition="aprobado_global == false">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_Y092AUZlEeOAo93nOXRuOg"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_cQPDAEZlEeOAo93nOXRuOg" name="Si" label="Si" source="_7VF60EZoEeOAo93nOXRuOg" target="_cP_ycEZlEeOAo93nOXRuOg" condition="aprobado_global == true">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_cQPqEEZlEeOAo93nOXRuOg"/>
       </connections>
     </elements>
     <groups xmi:type="process:Group" xmi:id="_0U9a8EG9EeOyLcWJA94kdg" documentation="Person who takes the first action to start the process" name="Initiator" label="Initiator" connectorId="ProcessInitiatior"/>
@@ -181,6 +204,18 @@
               <children xmi:type="notation:DecorationNode" xmi:id="__5c7YkHJEeODpYP6gi19aQ" type="5005"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="__5c7YUHJEeODpYP6gi19aQ" x="1072" y="46" width="178" height="89"/>
             </children>
+            <children xmi:type="notation:Shape" xmi:id="_cQCOsEZlEeOAo93nOXRuOg" type="3003" element="_cP_ycEZlEeOAo93nOXRuOg" fontName="Sans">
+              <children xmi:type="notation:DecorationNode" xmi:id="_cQC1wEZlEeOAo93nOXRuOg" type="5025">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_cQC1wUZlEeOAo93nOXRuOg" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cQCOsUZlEeOAo93nOXRuOg" x="495" y="85"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_7VHI8EZoEeOAo93nOXRuOg" type="3009" element="_7VF60EZoEeOAo93nOXRuOg" fontName="Sans">
+              <children xmi:type="notation:DecorationNode" xmi:id="_7VHwAEZoEeOAo93nOXRuOg" type="5020">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_7VHwAUZoEeOAo93nOXRuOg" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7VHI8UZoEeOAo93nOXRuOg" x="715" y="78" width="43" height="43"/>
+            </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_UFCyUUHHEeODpYP6gi19aQ"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_UFCyUkHHEeODpYP6gi19aQ" fontName="Sans"/>
@@ -254,6 +289,38 @@
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ct9DUEHKEeODpYP6gi19aQ" id="(0.5058823529411764,0.9764705882352941)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ct9DUUHKEeODpYP6gi19aQ" id="(0.5280898876404494,0.9775280898876404)"/>
     </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_WiEmUEZlEeOAo93nOXRuOg" type="4001" element="_WiCKEEZlEeOAo93nOXRuOg" source="__5c7YEHJEeODpYP6gi19aQ" target="_7VHI8EZoEeOAo93nOXRuOg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_WiFNYEZlEeOAo93nOXRuOg" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_WiFNYUZlEeOAo93nOXRuOg" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_WiFNYkZlEeOAo93nOXRuOg" visible="false" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_WiFNY0ZlEeOAo93nOXRuOg" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_WiEmUUZlEeOAo93nOXRuOg" fontName="Sans"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WiEmUkZlEeOAo93nOXRuOg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_Y0_EIEZlEeOAo93nOXRuOg" type="4001" element="_Y092AEZlEeOAo93nOXRuOg" source="_7VHI8EZoEeOAo93nOXRuOg" target="_L0cuwEG_EeOyLcWJA94kdg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Y0_EI0ZlEeOAo93nOXRuOg" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Y0_EJEZlEeOAo93nOXRuOg" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Y0_EJUZlEeOAo93nOXRuOg" visible="false" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Y0_EJkZlEeOAo93nOXRuOg" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Y0_EIUZlEeOAo93nOXRuOg" fontName="Sans"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Y0_EIkZlEeOAo93nOXRuOg" points="[-22, -31, -22, 353]$[-22, -377, -22, 7]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Y1CHcEZlEeOAo93nOXRuOg" id="(1.0,0.7209302325581395)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Y1CHcUZlEeOAo93nOXRuOg" id="(0.4970414201183432,0.9166666666666666)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_cQQRIEZlEeOAo93nOXRuOg" type="4001" element="_cQPDAEZlEeOAo93nOXRuOg" source="_7VHI8EZoEeOAo93nOXRuOg" target="_cQCOsEZlEeOAo93nOXRuOg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_cQQRI0ZlEeOAo93nOXRuOg" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_cQQRJEZlEeOAo93nOXRuOg" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_cQQ4MEZlEeOAo93nOXRuOg" visible="false" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_cQQ4MUZlEeOAo93nOXRuOg" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_cQQRIUZlEeOAo93nOXRuOg" fontName="Sans"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cQQRIkZlEeOAo93nOXRuOg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    </edges>
   </notation:Diagram>
   <notation:Diagram xmi:id="_6T0ZgEHSEeODpYP6gi19aQ" type="Form" element="_6TcmEEHSEeODpYP6gi19aQ" measurementUnit="Pixel">
     <children xmi:type="notation:Node" xmi:id="_6XyTgEHSEeODpYP6gi19aQ" type="2126" element="_6TcmFEHSEeODpYP6gi19aQ">
@@ -302,5 +369,19 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XfQ2UUXAEeOlDqkyn6XmqA"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_P-M4oUXAEeOlDqkyn6XmqA"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_w-xcsEZnEeOAo93nOXRuOg" type="Form" element="_w-vAcEZnEeOAo93nOXRuOg" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_w_RzAEZnEeOAo93nOXRuOg" type="2126" element="_w-vAcUZnEeOAo93nOXRuOg">
+      <children xmi:type="notation:DecorationNode" xmi:id="_w_RzBUZnEeOAo93nOXRuOg" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_w_RzAUZnEeOAo93nOXRuOg"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_w_RzAkZnEeOAo93nOXRuOg" fontName="Sans"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_w_RzA0ZnEeOAo93nOXRuOg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w_RzBEZnEeOAo93nOXRuOg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_xiU1sEZnEeOAo93nOXRuOg" type="2130" element="_xiRyYEZnEeOAo93nOXRuOg" fontName="Sans">
+      <children xmi:type="notation:DecorationNode" xmi:id="_xiU1skZnEeOAo93nOXRuOg" type="5133"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xiU1sUZnEeOAo93nOXRuOg"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_w-xcsUZnEeOAo93nOXRuOg"/>
   </notation:Diagram>
 </xmi:XMI>
